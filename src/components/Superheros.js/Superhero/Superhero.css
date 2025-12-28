@@ -1,0 +1,23 @@
+.superhero {
+  background-color: #f1f1f1;
+  padding: 15px;
+}
+.superhero h2 {
+  text-align: center;
+}
+
+.superhero img {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  display: block;
+}
+.more {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+}
+.more:hover {
+  color: #ff00ff;
+}
