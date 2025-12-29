@@ -14,7 +14,7 @@ export default function Superhero({
   // let contenu = "";
   // State
   // const contenu = useState(VALEUR, MODEFIEUR)
-  const [contenu, setContenu] = useState("");
+  const [showDetails, setShowDetails] = useState(false);
   // console.log(contenu);
 
   return (
@@ -23,11 +23,11 @@ export default function Superhero({
     // React est au courant ..et c'est pour ça que lorsque le component se charche la premiére fois
     // Meme lorsqu'on change la variable ne se passe rien et pour le faire on a besoin d'un state
 
-   /**
-    * - React Hooks Régles :
-    *   - Toujours appeler les React Hooks Seulement dans un composant fonctionnel (pas au dessus..)
-    *   - Tout le temps appeler les React Hooks avant le rest du code 
-    */
+    /**
+     * - React Hooks Régles :
+     *   - Toujours appeler les React Hooks Seulement dans un composant fonctionnel (pas au dessus..)
+     *   - Tout le temps appeler les React Hooks avant le rest du code
+     */
 
     <div className="superhero">
       <img alt={`${nom} Photo`} src={image}></img>
@@ -35,16 +35,19 @@ export default function Superhero({
 
       <p>{description} </p>
       {/* details */}
-      <div className="more" onClick={() => setContenu(details)}>
-        En savoir Plus
+      <div className="more" onClick={() => setShowDetails(!showDetails)}>
+        {showDetails ? "masquer détails" : "en savoir plus"}
       </div>
-      <div
-        style={{
-          whiteSpace: "pre-line",
-        }}
-      >
-        {contenu}
-      </div>
+
+      {showDetails && (
+        <div
+          style={{
+            whiteSpace: "pre-line",
+          }}
+        >
+          {details}
+        </div>
+      )}
       {/* Films */}
       <div
         style={{
